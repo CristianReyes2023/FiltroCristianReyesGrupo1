@@ -80,7 +80,7 @@ Finalmente definimos el endpoind de para el metodo en el controlador de cliente
         var results = await _unitOfWork.Clientes.GetClienteNoPagosYRepresentanteCiudad();
         return _mapper.Map<List<Object>>(results);
     }
-```c#
+```
 
 #### Consulta 3
 Devuelve las oficinas donde no trabajen ninguno de los empleados que hayan sido los representantes de ventas de algún cliente que haya realizado la compra de algún producto de la fama frutales
