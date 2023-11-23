@@ -29,7 +29,7 @@ public class ClienteDto
 
     public string CodigoPostal { get; set; }
 
-    public int IdEmpleadoRepresentanteVentasFk { get; set; }
+    public int? IdEmpleadoRepresentanteVentasFk { get; set; }
 
-    public decimal LimiteCredito { get; set; }
+    public decimal? LimiteCredito { get; set; }
 }

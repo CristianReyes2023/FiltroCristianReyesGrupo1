@@ -29,9 +29,9 @@ public partial class Cliente : BaseEntity
 
     public string CodigoPostal { get; set; }
 
-    public int IdEmpleadoRepresentanteVentasFk { get; set; }
+    public int? IdEmpleadoRepresentanteVentasFk { get; set; }
 
-    public decimal LimiteCredito { get; set; }
+    public decimal? LimiteCredito { get; set; }
 
     public virtual Empleado IdEmpleadoRepresentanteVentasFkNavigation { get; set; }
 

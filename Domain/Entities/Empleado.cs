@@ -18,7 +18,7 @@ public partial class Empleado : BaseEntity
 
     public string IdOficinaFk { get; set; } = null!;
 
-    public int IdEmpleadoJefeFk { get; set; }
+    public int? IdEmpleadoJefeFk { get; set; }
 
     public string Puesto { get; set; }
 

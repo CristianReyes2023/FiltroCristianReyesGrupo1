@@ -90,7 +90,7 @@ public class ProductoController : BaseController
         return _mapper.Map<ProductoDto>(exists);
     }
 
-    [HttpDelete("{id}")] // 2611
+    [HttpDelete("{id}")] // 2611 USO EXCLUSIVO DE CRISTIAN REYES
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(string id)

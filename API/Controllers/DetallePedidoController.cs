@@ -29,7 +29,7 @@ public class DetallePedidoController : BaseController
         return _mapper.Map<List<DetallePedidoDto>>(results);
     }
 
-    [HttpGet("{id}")] // 2611
+    [HttpGet("{idpedido}/{idproducto}")] // 2611
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -60,7 +60,7 @@ public class DetallePedidoController : BaseController
         return CreatedAtAction(nameof(Post), new { idpedido = resultDto.IdPedidoFk,idproducto = resultDto.IdProductoFk }, resultDto);
     }
 
-    [HttpPut("{id}")] // 2611
+    [HttpPut("{idpedido}/{idproducto}")] // 2611
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -91,7 +91,7 @@ public class DetallePedidoController : BaseController
         return _mapper.Map<DetallePedidoDto>(exists);
     }
 
-    [HttpDelete("{id}")] // 2611
+    [HttpDelete("{idpedido}/{idproducto}")] // 2611
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(int idpedido,string idproducto)
