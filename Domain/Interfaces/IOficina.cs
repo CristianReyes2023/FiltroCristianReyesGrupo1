@@ -7,5 +7,5 @@ using Domain.Entities;
 namespace Domain.Interfaces;
 public interface IOficina : IGenericRepositoryString<Oficina>
 {
-
+    Task<IEnumerable<Object>> GetOficinaNotrabajanProductFrutales();
 }

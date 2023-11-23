@@ -104,4 +104,13 @@ public class OficinaController : BaseController
         await _unitOfWork.SaveAsync();
         return NoContent();
     }
+
+    [HttpGet("GetOficinaNotrabajanProductFrutales")] // 2611
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<Object>>> GetOficinaNotrabajanProductFrutales()
+    {
+        var results = await _unitOfWork.Oficinas.GetOficinaNotrabajanProductFrutales();
+        return _mapper.Map<List<Object>>(results);
+    }
 }

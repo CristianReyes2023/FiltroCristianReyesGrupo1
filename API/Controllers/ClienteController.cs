@@ -104,4 +104,14 @@ public class ClienteController : BaseController
         await _unitOfWork.SaveAsync();
         return NoContent();
     }
+
+    [HttpGet("GetClienteNoPagosYRepresentanteCiudad")] // 2611
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<Object>>> GetClienteNoPagosYRepresentanteCiudad()
+    {
+        var results = await _unitOfWork.Clientes.GetClienteNoPagosYRepresentanteCiudad();
+        return _mapper.Map<List<Object>>(results);
+    }
+
 }
