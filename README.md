@@ -122,6 +122,40 @@ Finalmente definimos el endpoind de para el metodo en el controlador de oficina
     }
 ```c#
 
+#### Consulta 4
+Devuelve un listado de los 20 productos más vendidos y el número total de las unidades
+
+##### ENDPOINT:http://localhost:5004/Cliente/GetClienteNoPagosYRepresentanteCiudad
+Primero definimos el codigo en la interfaz de Detallepedido
+```c#
+    Task<IEnumerable<Object>> Get20ProductosMásVendidos();
+```
+Segundo definimos el codigo para acceder a los datos en el repositorio de detalle pedido
+```c#
+       public async Task<IEnumerable<Object>> Get20ProductosMásVendidos()
+    {
+        var result = await (from _detallepedidos in _context.DetallePedidos
+                            group _detallepedidos  by _detallepedidos.IdProductoFk into _ptotalven
+                            select new
+                            {
+                                IdProducto = _ptotalven.Key,
+                                TotalVendidos = _ptotalven.Sum(x=>x.Cantidad)
+
+                            }).OrderByDescending(x=>x.TotalVendidos).Take(20).ToListAsync();
+        return result;
+    }
+```
+Finalmente definimos el endpoind de para el metodo en el controlador de detallepedido
+```c#
+    [HttpGet("Get20ProductosMásVendidos")] // 2611
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<Object>>> Get20ProductosMásVendidos()
+    {
+        var results = await _unitOfWork.DetallePedidos.Get20ProductosMásVendidos();
+        return _mapper.Map<List<Object>>(results);
+    }
+```c#
 
 
 

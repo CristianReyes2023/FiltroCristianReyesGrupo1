@@ -7,5 +7,5 @@ using Domain.Entities;
 namespace Domain.Interfaces;
 public interface IDetallePedido : IGenericRepositoryCompuesto<DetallePedido>
 {
-
+    Task<IEnumerable<Object>> Get20ProductosMásVendidos();
 }

@@ -105,4 +105,13 @@ public class DetallePedidoController : BaseController
         await _unitOfWork.SaveAsync();
         return NoContent();
     }
+
+    [HttpGet("Get20ProductosMásVendidos")] // 2611
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<Object>>> Get20ProductosMásVendidos()
+    {
+        var results = await _unitOfWork.DetallePedidos.Get20ProductosMásVendidos();
+        return _mapper.Map<List<Object>>(results);
+    }
 }
