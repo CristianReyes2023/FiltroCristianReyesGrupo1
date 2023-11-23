@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Persistence.Entities;
+namespace Domain.Entities;
 
-public partial class GamaProducto
+public partial class GamaProducto : BaseEntityString
 {
-    public string Id { get; set; } = null!;
+    // public string Id { get; set; } = null!;
 
     public string? DescripcionTexto { get; set; }
 

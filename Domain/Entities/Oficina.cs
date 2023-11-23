@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Persistence.Entities;
+namespace Domain.Entities;
 
-public partial class Oficina
+public partial class Oficina :BaseEntityString
 {
-    public string Id { get; set; } = null!;
+    // public string Id { get; set; } = null!;
 
     public string Ciudad { get; set; } = null!;
 

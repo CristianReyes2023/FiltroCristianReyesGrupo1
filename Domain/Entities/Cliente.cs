@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json.Bson;
 
-namespace Persistence.Entities;
+namespace Domain.Entities;
 
-public partial class Cliente
+public partial class Cliente : BaseEntity
 {
-    public int Id { get; set; }
 
     public string NombreCliente { get; set; } = null!;
 

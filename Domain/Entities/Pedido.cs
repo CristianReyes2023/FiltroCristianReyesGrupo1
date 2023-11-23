@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Persistence.Entities;
+namespace Domain.Entities;
 
-public partial class Pedido
+public partial class Pedido : BaseEntity
 {
-    public int Id { get; set; }
+    // public int Id { get; set; }
 
     public DateOnly FechaPedido { get; set; }
 

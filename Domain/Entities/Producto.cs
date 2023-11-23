@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Persistence.Entities;
+namespace Domain.Entities;
 
-public partial class Producto
+public partial class Producto : BaseEntityString
 {
-    public string Id { get; set; } = null!;
+    // public string Id { get; set; } = null!;
 
     public string Nombre { get; set; } = null!;
 
