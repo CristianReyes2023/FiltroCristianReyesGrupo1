@@ -11,7 +11,7 @@ public class EmpleadoDto
 
     public string Apellido1 { get; set; } = null!;
 
-    public string? Apellido2 { get; set; }
+    public string Apellido2 { get; set; }
 
     public string Extension { get; set; } = null!;
 
@@ -19,7 +19,7 @@ public class EmpleadoDto
 
     public string IdOficinaFk { get; set; } = null!;
 
-    public int? IdEmpleadoJefeFk { get; set; }
+    public int IdEmpleadoJefeFk { get; set; }
 
-    public string? Puesto { get; set; }
+    public string Puesto { get; set; }
 }

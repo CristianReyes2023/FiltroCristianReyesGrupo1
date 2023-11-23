@@ -11,11 +11,11 @@ public partial class Producto : BaseEntityString
 
     public string IdGamaFk { get; set; } = null!;
 
-    public string? Dimensiones { get; set; }
+    public string Dimensiones { get; set; }
 
-    public string? Proveedor { get; set; }
+    public string Proveedor { get; set; }
 
-    public string? Descripcion { get; set; }
+    public string Descripcion { get; set; }
 
     public short CantidadEnStock { get; set; }
 

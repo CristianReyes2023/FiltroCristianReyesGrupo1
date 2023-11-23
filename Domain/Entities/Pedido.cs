@@ -15,7 +15,7 @@ public partial class Pedido : BaseEntity
 
     public string Estado { get; set; } = null!;
 
-    public string? Comentarios { get; set; }
+    public string Comentarios { get; set; }
 
     public int IdClienteFk { get; set; }
 

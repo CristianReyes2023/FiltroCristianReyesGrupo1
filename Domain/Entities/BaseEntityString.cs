@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 namespace Domain.Entities;
 public class BaseEntityString
 {
-    public string? Id { get; set; }
+    public string Id { get; set; }
 }

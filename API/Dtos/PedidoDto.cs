@@ -12,11 +12,11 @@ public class PedidoDto
 
     public DateOnly FechaEsperada { get; set; }
 
-    public DateOnly? FechaEntrega { get; set; }
+    public DateOnly FechaEntrega { get; set; }
 
     public string Estado { get; set; } = null!;
 
-    public string? Comentarios { get; set; }
+    public string Comentarios { get; set; }
 
     public int IdClienteFk { get; set; }
 }

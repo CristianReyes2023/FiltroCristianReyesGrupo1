@@ -9,9 +9,9 @@ public class ClienteDto
     public int Id { get; set; }
     public string NombreCliente { get; set; } = null!;
 
-    public string? NombreContacto { get; set; }
+    public string NombreContacto { get; set; }
 
-    public string? ApellidoContacto { get; set; }
+    public string ApellidoContacto { get; set; }
 
     public string Telefono { get; set; } = null!;
 
@@ -19,17 +19,17 @@ public class ClienteDto
 
     public string LineaDireccion1 { get; set; } = null!;
 
-    public string? LineaDireccion2 { get; set; }
+    public string LineaDireccion2 { get; set; }
 
     public string Ciudad { get; set; } = null!;
 
-    public string? Region { get; set; }
+    public string Region { get; set; }
 
-    public string? Pais { get; set; }
+    public string Pais { get; set; }
 
-    public string? CodigoPostal { get; set; }
+    public string CodigoPostal { get; set; }
 
-    public int? IdEmpleadoRepresentanteVentasFk { get; set; }
+    public int IdEmpleadoRepresentanteVentasFk { get; set; }
 
-    public decimal? LimiteCredito { get; set; }
+    public decimal LimiteCredito { get; set; }
 }

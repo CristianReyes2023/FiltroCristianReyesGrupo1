@@ -19,7 +19,7 @@ builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 
 builder.Services.AddDbContext<JardineriaContext>(optionsBuilder => // 2611
 {
-    string? connectionString = builder.Configuration.GetConnectionString("MySqlConex");
+    string connectionString = builder.Configuration.GetConnectionString("MySqlConex");
     optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 

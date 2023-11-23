@@ -10,7 +10,7 @@ public partial class Empleado : BaseEntity
 
     public string Apellido1 { get; set; } = null!;
 
-    public string? Apellido2 { get; set; }
+    public string Apellido2 { get; set; }
 
     public string Extension { get; set; } = null!;
 
@@ -18,13 +18,13 @@ public partial class Empleado : BaseEntity
 
     public string IdOficinaFk { get; set; } = null!;
 
-    public int? IdEmpleadoJefeFk { get; set; }
+    public int IdEmpleadoJefeFk { get; set; }
 
-    public string? Puesto { get; set; }
+    public string Puesto { get; set; }
 
     public virtual ICollection<Cliente> Clientes { get; set; } = new List<Cliente>();
 
-    public virtual Empleado? IdEmpleadoJefeFkNavigation { get; set; }
+    public virtual Empleado IdEmpleadoJefeFkNavigation { get; set; }
 
     public virtual Oficina IdOficinaFkNavigation { get; set; } = null!;
 
