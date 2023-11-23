@@ -120,7 +120,7 @@ Finalmente definimos el endpoind de para el metodo en el controlador de oficina
         var results = await _unitOfWork.Clientes.GetClienteNoPagosYRepresentanteCiudad();
         return _mapper.Map<List<Object>>(results);
     }
-```c#
+```
 
 #### Consulta 4
 Devuelve un listado de los 20 productos más vendidos y el número total de las unidades
@@ -155,7 +155,7 @@ Finalmente definimos el endpoind de para el metodo en el controlador de detallep
         var results = await _unitOfWork.DetallePedidos.Get20ProductosMásVendidos();
         return _mapper.Map<List<Object>>(results);
     }
-```c#
+```
 
 
 
