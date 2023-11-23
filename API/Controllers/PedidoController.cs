@@ -104,4 +104,13 @@ public class PedidoController : BaseController
         await _unitOfWork.SaveAsync();
         return NoContent();
     }
+
+    [HttpGet("GetPedidosNoEntregadosATiempo")] // 2611
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<Object>>> GetPedidosNoEntregadosATiempo()
+    {
+        var results = await _unitOfWork.Pedidos.GetPedidosNoEntregadosATiempo();
+        return _mapper.Map<List<Object>>(results);
+    }
 }
