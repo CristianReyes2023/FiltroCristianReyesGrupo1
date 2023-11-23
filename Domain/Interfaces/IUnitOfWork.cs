@@ -7,13 +7,13 @@ namespace Domain.Interfaces;
 public interface IUnitOfWork
 {
     ICliente Clientes { get; }
-    IDetallePedido DetaIDetallePedidos { get; }
-    IEmpleado EmIEmpleados { get; }
-    IGamaProducto GamaIGamaProductos { get; }
+    IDetallePedido DetallePedidos { get; }
+    IEmpleado Empleados { get; }
+    IGamaProducto GamaProductos { get; }
     IOficina Oficinas { get; }
     IPago Pagos {get;}
     IPedido Pedidos {get;}
-    IProducto ProdIProductos {get;}
+    IProducto Productos {get;}
 
     Task<int> SaveAsync();
 
