@@ -1,3 +1,6 @@
+using System.Reflection;
+using API.Extensions;
+using AspNetCoreRateLimit;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Data;
 
@@ -9,6 +12,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.ConfigureCors();
+builder.Services.AddApplicationServices();
+builder.Services.ConfigureRateLimiting();
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 
 builder.Services.AddDbContext<JardineriaContext>(optionsBuilder => // 2611
 {
@@ -42,6 +49,8 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+app.UseCors("CorsPolicy");
+app.UseIpRateLimiting();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
